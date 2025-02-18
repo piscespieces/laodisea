@@ -14,26 +14,26 @@ const {
   <div class='pt-20 lg:pt-[100px] xl:pt-36'>
     <div class='container-default'>
       <div
-        class='grid items-center gap-5 overflow-hidden rounded-3xl bg-ColorYellow px-8 text-ColorBlack md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-[0.8fr_1fr] lg:gap-[66px] lg:rounded-[50px] xl:overflow-visible'>
+        class='grid items-center gap-5 overflow-hidden rounded-3xl bg-ColorYellow px-8 py-4 text-ColorBlack md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-[0.8fr_1fr] lg:gap-[66px] lg:rounded-[50px] xl:overflow-visible'>
         <div
           class='relative z-10 order-2 flex items-center justify-center md:order-1'>
           <Image
             src={image}
-            alt='newsletter'
+            alt='chatbot'
             width='306'
             height='585'
-            class='h-auto w-[50%] md:w-auto xl:-mt-20'
+            class='h-auto w-[75%] max-w-none md:w-auto xl:-mt-20'
           />
           <Image
             src='/assets/img/elements/home-3-content-img-shape-1.svg'
-            alt='home-3-content-img-shape-1'
+            alt='star shape'
             width='533'
             height='521'
-            class='absolute -z-10 mb-8 h-auto max-w-[90%] sm:max-w-[100%] xl:max-w-[533px]'
+            class='absolute -z-10 mb-8 h-auto max-w-[100%] sm:max-w-[100%] xl:max-w-[533px]'
           />
         </div>
         <div
-          class='order-1 py-10 md:order-2 md:py-[60px] md:pr-12 lg:py-20 lg:pr-[70px] xl:py-[80px] xl:pr-[100px]'>
+          class='order-1 py-0 md:order-2 md:py-[60px] md:pr-12 lg:py-20 lg:pr-[70px] xl:py-[80px] xl:pr-[100px]'>
           <div class='mb-5'>
             <div>
               <h2 class='jos'>
@@ -43,7 +43,7 @@ const {
           </div>
           <p class='text-ColorBlack/80'>{description}</p>
           <div class='mt-6 flex gap-6 lg:mt-[50px]'>
-            <a href={playStoreDownloadLink} aria-label='icon-apple-app-store'>
+            <!-- <a href={playStoreDownloadLink} aria-label='icon-apple-app-store'>
               <Image
                 src='/assets/img/icons/icon-apple-app-store.svg'
                 alt='icon-apple-app-store'
@@ -60,7 +60,7 @@ const {
                 height='60'
                 class='h-full w-auto'
               />
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
