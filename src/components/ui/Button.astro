@@ -1,0 +1,12 @@
+---
+const { link, text, css } = Astro.props;
+---
+
+<a href={link} class=`group relative z-10 inline-block ${css}`>
+  <div class='btn is-large is-rounded is-yellow'>
+    {text}
+  </div>
+  <div
+    class='is-rounded absolute inset-0 -z-10 translate-x-[5px] translate-y-[5px] bg-ColorYellow transition-all duration-300 ease-linear group-hover:translate-x-0 group-hover:translate-y-0'>
+  </div>
+</a>

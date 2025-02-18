@@ -1,0 +1,27 @@
+---
+import { getEntryBySlug } from "astro:content";
+import Layout from "../layout/Layout.astro";
+import HeroSection from "../components/Index/HeroSection.astro";
+import ContentSection from "../components/Index/ContentSection.astro";
+import TestimonialSection from "../components/Index/TestimonialSection.astro";
+import Features from "../components/Index/Features.astro";
+import PortfolioSlider from "../components/Portfolio/PortfolioSlider.astro";
+import VideoClass from "../components/Index/VideoClass.astro";
+import CtaSection from "../components/Index/CtaSection.astro";
+const HeroSectionData = await getEntryBySlug("IndexPage", "hero");
+const {
+  data: { sliderText },
+} = await getEntryBySlug("portfolio", "index");
+---
+
+<Layout title='Home Page'>
+  <main class='main-wrapper relative overflow-hidden'>
+    <HeroSection HeroSectionData={HeroSectionData} />
+    <Features />
+    <ContentSection />
+    <PortfolioSlider sliderText={sliderText} />
+    <VideoClass />
+    <TestimonialSection />
+    <CtaSection />
+  </main>
+</Layout>

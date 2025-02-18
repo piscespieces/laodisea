@@ -1,0 +1,65 @@
+---
+import { getEntryBySlug } from "astro:content";
+import Heading from "../ui/Heading.astro";
+import Button from "../ui/Button.astro";
+import { Image } from "astro:assets";
+
+const {
+  data: { title, classes, button },
+} = await getEntryBySlug("IndexPage", "videosection");
+---
+
+<section class='video-class-section'>
+  <div class='relative z-10'>
+    <div class='section-space'>
+      <div class='container-default'>
+        <div class='jos mb-[60px] xl:mb-20'>
+          <Heading heading={title} MaxWidth='max-w-[636px]' />
+        </div>
+        <div
+          class='mb-10 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:mb-20 lg:grid-cols-3'>
+          {
+            classes?.map(({ image, link, title, description }: any) => (
+              <div class='jos'>
+                <div class='relative flex items-center justify-center overflow-hidden rounded-[10px] after:absolute after:inset-0 after:bg-ColorBlack/40'>
+                  <Image
+                    src={image}
+                    alt='video-class-img-1'
+                    width='416'
+                    height='250'
+                    class='h-full w-full object-cover'
+                  />
+
+                  <a
+                    data-fslightbox='gallery'
+                    href={link}
+                    class='group group absolute z-10 flex h-[70px] w-[70px] items-center justify-center rounded-[50%] border-[3px] border-white text-white'
+                    aria-label='video-play'>
+                    <span class='text-xl transition-all duration-300 ease-linear group-hover:scale-110'>
+                      <i class='fa-solid fa-play' />
+                    </span>
+                  </a>
+                </div>
+                <div class='mb-4 mt-6 text-2xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack'>
+                  {title}
+                </div>
+                <p>{description}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class='flex justify-center'>
+          <Button text={button?.text} link={button?.link} />
+        </div>
+      </div>
+    </div>
+    <Image
+      src='/assets/img/elements/hero-3-shapes-1.svg'
+      alt='hero-2-shape-1'
+      width='110'
+      height='191'
+      class='absolute -left-16 top-[150px] -z-10 hidden sm:inline-block'
+    />
+  </div>
+</section>

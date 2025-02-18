@@ -1,0 +1,40 @@
+---
+import { getEntryBySlug } from "astro:content";
+import Button from "../ui/Button.astro";
+import { Image } from "astro:assets";
+
+const ContentData = await getEntryBySlug("IndexPage", "content-3");
+const { title, description, button, image } = ContentData?.data;
+---
+
+<section class='section-content'>
+  <div class='section-space'>
+    <div class='container-custom'>
+      <div
+        class='grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1fr_minmax(0,_0.82fr)] xl:gap-[143px]'>
+        <div class='jos' data-jos_animation='fade-right'>
+          <div>
+            <div class='mb-5'>
+              <h2>{title}</h2>
+            </div>
+          </div>
+          <p class='max-w-[627px]'>
+            {description}
+          </p>
+          <div class='mt-[50px]'>
+            <Button text={button?.text} link={button?.link} color='is-black' />
+          </div>
+        </div>
+        <div class='jos relative' data-jos_animation='fade-left'>
+          <Image
+            src={image}
+            alt='content-img-3'
+            width='472'
+            height='348'
+            class='h-auto w-full'
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

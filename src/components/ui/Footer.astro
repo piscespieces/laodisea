@@ -1,0 +1,89 @@
+---
+import { getEntryBySlug } from "astro:content";
+import HorizontalLine from "./HorizontalLine.astro";
+import FooterPages from "./FooterPages.astro";
+import Logo from "./Logo.astro";
+const FooterData = await getEntryBySlug("site", "footer");
+const {
+  logo,
+  description,
+  mail,
+  PrimaryPages,
+  UtilityPages,
+  Resources,
+  socialLinks,
+} = FooterData.data;
+---
+
+<footer class='section-footer'>
+  <div class='bg-white'>
+    <div class='text-ColorBlack'>
+      <div class='py-[60px] lg:py-20'>
+        <div class='container-default'>
+          <div
+            class='grid gap-x-16 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_repeat(3,_auto)] xl:gap-x-24 xxl:gap-x-[134px]'>
+            <div class='flex flex-col gap-y-7 md:col-span-3 lg:col-span-1'>
+              <Logo link='/' logo={logo} />
+              <div>
+                <div class='lg:max-w-[416px]'>
+                  {description}
+                </div>
+                <a
+                  href=`mailto:${mail}`
+                  class='my-6 block underline-offset-4 transition-all duration-300 hover:underline'
+                  >{mail}</a
+                >
+                <div class='flex flex-wrap gap-5'>
+                  {
+                    socialLinks.map((socialLink: any) => (
+                      <a
+                        href={socialLink?.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        class='flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm  transition-all duration-300 hover:bg-ColorYellow'
+                        aria-label='icon'>
+                        <i class={`fa-brands ${socialLink?.icon}`} />
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+            <div class='flex flex-col gap-y-7 md:col-span-1 lg:col-span-1'>
+              <div class='text-xl font-semibold capitalize'>Primary Pages</div>
+              <ul class='flex flex-col gap-y-[10px] capitalize'>
+                <FooterPages data={PrimaryPages} />
+              </ul>
+            </div>
+            <div class='flex flex-col gap-y-6 md:col-span-1 lg:col-span-1'>
+              <div class='text-xl font-semibold capitalize'>Utility pages</div>
+
+              <ul class='flex flex-col gap-y-[10px] capitalize'>
+                <FooterPages data={UtilityPages} />
+              </ul>
+            </div>
+            <div class='flex flex-col gap-y-6 md:col-span-1 lg:col-span-1'>
+              <div class='text-xl font-semibold capitalize'>Resources</div>
+
+              <ul class='flex flex-col gap-y-[10px] capitalize'>
+                <FooterPages data={Resources} />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <HorizontalLine color='bg-black' />
+
+    <div>
+      <div class='py-[18px]'>
+        <div class='container-default'>
+          <div class='text-center'>
+            &copy; Copyright {new Date().getFullYear()}, All Rights Reserved by
+            ElevateMinds
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

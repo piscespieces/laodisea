@@ -1,0 +1,82 @@
+---
+import { getEntryBySlug } from "astro:content";
+const Testimonial = await getEntryBySlug("IndexPage", "testimonial");
+import Button from "../ui/Button.astro";
+import { Image } from "astro:assets";
+const { header, testimonials, allReviewLink } = Testimonial.data;
+---
+
+<section class='section-testimonial'>
+  <div class='bg-ColorOffWhite'>
+    <div class='section-space'>
+      <div class='container-default'>
+        <div
+          class='jos mb-[60px] flex flex-wrap items-end justify-between gap-x-10 gap-y-5 xl:mb-20'>
+          <div class='max-w-[608px]'>
+            <h2>{header}</h2>
+          </div>
+          <Button link={allReviewLink.link} text={allReviewLink.name} />
+        </div>
+        <div class='break-inside-auto gap-6 md:columns-2 lg:columns-3'>
+          {
+            testimonials.map(
+              ({ title, description, client: { name, post, image } }: any) => (
+                <div class='jos mb-6 break-inside-avoid'>
+                  <div class='flex flex-col rounded-[10px] bg-white p-6 text-ColorBlack sm:p-[30px]'>
+                    <div class='mb-5 flex gap-[5px] text-2xl text-[#00B67A] lg:mb-[30px]'>
+                      <Image
+                        src='/assets/img/icons/icon-green-star.svg'
+                        alt='icon-green-star'
+                        width='26'
+                        height='24'
+                      />
+                      <Image
+                        src='/assets/img/icons/icon-green-star.svg'
+                        alt='icon-green-star'
+                        width='26'
+                        height='24'
+                      />
+                      <Image
+                        src='/assets/img/icons/icon-green-star.svg'
+                        alt='icon-green-star'
+                        width='26'
+                        height='24'
+                      />
+                      <Image
+                        src='/assets/img/icons/icon-green-star.svg'
+                        alt='icon-green-star'
+                        width='26'
+                        height='24'
+                      />
+                      <Image
+                        src='/assets/img/icons/icon-green-star.svg'
+                        alt='icon-green-star'
+                        width='26'
+                        height='24'
+                      />
+                    </div>
+                    <div class='mb-1 font-semibold'>{title}</div>
+                    <p class='mb-6'>{description}</p>
+                    <div class='flex items-center gap-4'>
+                      <Image
+                        src={image}
+                        alt='testimonial-avater-1'
+                        width='60'
+                        height='60'
+                        class='h-[60px] w-[60px] rounded-[50%]'
+                      />
+                      <div>
+                        <span class='block font-semibold'>{name}</span>
+                        <span class='text-sm text-opacity-80'>{post}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+---
+import { Image } from "astro:assets";
+import Button from "../ui/Button.astro";
+
+const { HeroSectionData } = Astro.props;
+const {
+  header,
+  description,
+  image,
+  clientImage1,
+  clientImage2,
+  clientImage3,
+  happyCustomers,
+  rating,
+  button,
+} = HeroSectionData?.data;
+---
+
+<section class='section-hero'>
+  <div class='relative z-10'>
+    <div
+      class='pb-20 pt-28 md:pt-36 lg:pb-[100px] lg:pt-[150px] xxl:pb-[120px] xxl:pt-[185px]'>
+      <div class='container-default'>
+        <div
+          class='grid items-center gap-10 lg:grid-cols-[1fr,minmax(0,_0.6fr)] lg:gap-20 xl:gap-[122px]'>
+          <div class='jos mx-auto max-w-[500px] lg:mx-0 lg:max-w-none'>
+            <div
+              class='flex flex-col items-center justify-center text-center lg:items-start lg:justify-normal lg:text-left'>
+              <h1
+                class='mb-6 text-4xl font-extrabold leading-[1.11] -tracking-[1px] md:text-5xl lg:text-6xl xl:text-7xl xxl:text-[90px]'>
+                {header}
+              </h1>
+              <p class='mb-10 xl:mb-[50px]'>
+                {description}
+              </p>
+              <div
+                class='mb-8 flex flex-wrap items-center gap-[10px] lg:mb-[50px]'>
+                <div class='flex'>
+                  <Image
+                    src={clientImage1}
+                    alt='hero-avatar-Image-1'
+                    width='58'
+                    height='58'
+                    class='-ml-[15px] h-[58px] w-[58px] rounded-[50%] first:-ml-0'
+                  />
+                  <Image
+                    src={clientImage2}
+                    alt='hero-avatar-Image-2'
+                    width='58'
+                    height='58'
+                    class='-ml-[15px] h-[58px] w-[58px] rounded-[50%] first:-ml-0'
+                  />
+                  <Image
+                    src={clientImage3}
+                    alt='hero-avatar-Image-2'
+                    width='58'
+                    height='58'
+                    class='-ml-[15px] h-[58px] w-[58px] rounded-[50%] first:-ml-0'
+                  />
+                </div>
+                <ul class='flex gap-12 text-ColorBlack'>
+                  <li
+                    class='relative after:absolute after:left-[calc(100%+_24px)] after:top-1/2 after:h-10 after:w-0.5 after:-translate-y-1/2 after:bg-ColorBlack/10 last:after:hidden'>
+                    <div
+                      class='text-[30px] font-bold leading-[1.4] -tracking-[1px]'>
+                      {happyCustomers}
+                    </div>
+                    <div class='flex gap-[5px] text-base'>Happy Customers</div>
+                  </li>
+                  <li
+                    class='relative after:absolute after:left-[calc(100%+_24px)] after:top-1/2 after:h-10 after:w-0.5 after:-translate-y-1/2 after:bg-ColorBlack/10 last:after:hidden'>
+                    <div
+                      class='text-[30px] font-bold leading-[1.4] -tracking-[1px]'>
+                      {rating}
+                    </div>
+                    <div class='flex gap-[5px] text-base'>
+                      <div class='flex gap-1'>
+                        <Image
+                          src='/assets/img/icons/icon-green-star.svg'
+                          alt='icon-green-star'
+                          width='17'
+                          height='17'
+                        />
+                        <Image
+                          src='/assets/img/icons/icon-green-star.svg'
+                          alt='icon-green-star'
+                          width='17'
+                          height='17'
+                        />
+                        <Image
+                          src='/assets/img/icons/icon-green-star.svg'
+                          alt='icon-green-star'
+                          width='17'
+                          height='17'
+                        />
+                        <Image
+                          src='/assets/img/icons/icon-green-star.svg'
+                          alt='icon-green-star'
+                          width='17'
+                          height='17'
+                        />
+                        <Image
+                          src='/assets/img/icons/icon-green-star.svg'
+                          alt='icon-green-star'
+                          width='17'
+                          height='17'
+                        />
+                      </div>
+                      Rating
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class='flex flex-wrap justify-center gap-5 sm:justify-normal'>
+                <Button text={button?.text} link={button?.link} />
+              </div>
+            </div>
+          </div>
+          <div class='jos'>
+            <div
+              class='relative z-10 mx-auto h-auto max-w-[280px] sm:max-w-[500px] lg:ml-auto lg:mr-0'>
+              <Image
+                src={image}
+                alt='hero-mobille'
+                width='612'
+                height='1272'
+                class='z-10 mx-auto h-[635px] w-[306px]'
+              />
+              <Image
+                src='/assets/img/elements/hero-3-shapes-1.svg'
+                alt='hero-2-shape-1'
+                width='110'
+                height='191'
+                class='absolute -left-[12%] bottom-[18%] -z-10 xl:-left-[2%] xxl:left-[6%]'
+              />
+              <Image
+                src='/assets/img/elements/hero-3-shapes-2.svg'
+                alt='hero-2-shape-1'
+                width='292'
+                height='299'
+                class='absolute -right-[18%] top-[15%] -z-10'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Image
+      src='/assets/img/elements/hero-3-bg-shape.svg'
+      alt='hero-3-bg-shape'
+      width='1600'
+      height='883'
+      class='absolute left-0 top-0 -z-10 hidden h-full w-auto xl:block'
+    />
+  </div>
+</section>
