@@ -25,6 +25,33 @@ const { siteName, description, favicon } = MetaData?.data;
       content={description ? description : "Agency06 Theme"}
     />
     <link rel='icon' href={favicon || "/favicon.webp"} />
+    
+    <!-- Preload hero image -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/th-3/hero-mobile.png"
+      type="image/png"
+    />
+    <!-- Preload hero background elements -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/elements/hero-3-bg-shape.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/elements/hero-3-shapes-1.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/elements/hero-3-shapes-2.svg"
+      type="image/svg+xml"
+    />
   </head>
   <body>
     <div class='page-wrapper relative z-[1] bg-white'>
