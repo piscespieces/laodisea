@@ -88,7 +88,7 @@
   }
 
   .is-yellow {
-    @apply border-ColorBlack bg-ColorYellow text-ColorBlack;
+    @apply border-ColorBlack bg-ColorYellow text-white;
   }
 
   .is-violet {

@@ -14,7 +14,8 @@ const {
   <div class='pt-20 lg:pt-[100px] xl:pt-36'>
     <div class='container-default'>
       <div
-        class='grid items-center gap-5 overflow-hidden rounded-3xl bg-ColorYellow px-8 py-4 text-ColorBlack md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-[0.8fr_1fr] lg:gap-[66px] lg:rounded-[50px] xl:overflow-visible'>
+        class='grid items-center gap-5 overflow-hidden rounded-3xl bg-gradient-to-r from-[#F39B03]/85 to-[#C65002]/85 bg-[length:100%_100%] bg-no-repeat px-8 py-4 text-ColorBlack md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-[0.8fr_1fr] lg:gap-[66px] lg:rounded-[50px] xl:overflow-visible'
+        style="background-position: 0% 0%, 56% 0%;">
         <div
           class='relative z-10 order-2 flex items-center justify-center md:order-1'>
           <Image
@@ -36,12 +37,12 @@ const {
           class='order-1 py-0 md:order-2 md:py-[60px] md:pr-12 lg:py-20 lg:pr-[70px] xl:py-[80px] xl:pr-[100px]'>
           <div class='mb-5'>
             <div>
-              <h2 class='jos'>
+              <h2 class='jos text-white'>
                 {title}
               </h2>
             </div>
           </div>
-          <p class='text-ColorBlack/80'>{description}</p>
+          <p class='text-white'>{description}</p>
           <div class='mt-6 flex gap-6 lg:mt-[50px]'>
             <!-- <a href={playStoreDownloadLink} aria-label='icon-apple-app-store'>
               <Image

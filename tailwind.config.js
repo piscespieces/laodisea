@@ -39,12 +39,12 @@ export default {
 
       colors: {
         ColorDark: "#191919",
-        ColorBlack: "#0A102F",
+        ColorBlack: "#010202",
         ColorBlue: "#3147FF",
         ColorOffWhite: "#FAF9F5",
         ColorPurple: "#A259FF",
         ColorBluePurple: "#7949F6",
-        ColorYellow: "#FFC900",
+        ColorYellow: "#F39B03",
         ColorViolet: "#4B2AAD",
         ColorAtomicTangerine: "#FF9966",
         ColorLime: "#C1FF00",
