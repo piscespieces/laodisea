@@ -5,6 +5,7 @@ import HeroSection from "../components/Index/HeroSection.astro";
 import ContentSection from "../components/Index/ContentSection.astro";
 import TestimonialSection from "../components/Index/TestimonialSection.astro";
 import Features from "../components/Index/Features.astro";
+import LogosSection from "../components/Index/LogosSection.astro";
 import PortfolioSlider from "../components/Portfolio/PortfolioSlider.astro";
 import VideoClass from "../components/Index/VideoClass.astro";
 import CtaSection from "../components/Index/CtaSection.astro";
@@ -17,11 +18,12 @@ const {
 <Layout title='Home'>
   <main class='main-wrapper relative overflow-hidden'>
     <HeroSection HeroSectionData={HeroSectionData} />
+    <LogosSection />
     <Features />
-    <!-- <ContentSection /> -->
+    <ContentSection />
     <!-- <PortfolioSlider sliderText={sliderText} /> -->
     <!-- <VideoClass /> -->
-    <!-- <TestimonialSection /> -->
     <CtaSection />
+    <TestimonialSection />
   </main>
 </Layout>

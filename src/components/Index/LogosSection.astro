@@ -1,0 +1,55 @@
+---
+import { getEntryBySlug } from "astro:content";
+
+interface Logo {
+  name: string;
+  image: string;
+}
+
+const LogosData = await getEntryBySlug("IndexPage", "logos_section");
+---
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  
+  .animate-marquee {
+    animation: scroll var(--duration) linear infinite;
+  }
+  
+  .group:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+</style>
+
+<section id="logos" class="bg-background">
+  <div class="container mx-auto px-4 md:px-8 py-28">
+    <h2 class="text-center text-sm font-semibold text-ColorBlack/40">{LogosData.data.title}</h2>
+    <div class="relative mt-6">
+      <div class="group flex overflow-hidden p-2 [--gap:3rem] [gap:var(--gap)] flex-row max-w-full [--duration:40s]">
+        {[1, 2, 3, 4].map(() => (
+          <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+            {LogosData.data.logos.map((logo: Logo) => (
+              <img
+                alt={logo.name}
+                loading="lazy"
+                width="112"
+                height="40"
+                class="w-28 dark:brightness-0 dark:invert grayscale opacity-30"
+                src={logo.image}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+      <div class="pointer-events-none absolute inset-y-0 left-0 h-full w-1/3 bg-gradient-to-r from-background"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 h-full w-1/3 bg-gradient-to-l from-background"></div>
+    </div>
+  </div>
+</section> 

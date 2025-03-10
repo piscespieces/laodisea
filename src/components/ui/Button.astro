@@ -2,7 +2,7 @@
 const { link, text, css } = Astro.props;
 ---
 
-<a href={link} class=`group relative z-10 inline-block ${css}`>
+<a href={link} target={Astro.props.target ? "_blank" : undefined} class={`group relative z-10 inline-block ${css}`}>
   <div class='btn is-large is-rounded is-yellow'>
     {text}
   </div>
