@@ -1,0 +1,16 @@
+---
+import { getEntryBySlug } from "astro:content";
+import Button from "../ui/Button.astro";
+
+const ctaButtonData = await getEntryBySlug("IndexPage", "cta-button");
+const { text, link, target, css } = ctaButtonData.data;
+---
+
+<div class="flex justify-center py-12">
+  <Button 
+    text={text} 
+    link={link} 
+    target={target}
+    css={css} 
+  />
+</div>

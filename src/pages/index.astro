@@ -9,6 +9,7 @@ import LogosSection from "../components/Index/LogosSection.astro";
 import PortfolioSlider from "../components/Portfolio/PortfolioSlider.astro";
 import VideoClass from "../components/Index/VideoClass.astro";
 import CtaSection from "../components/Index/CtaSection.astro";
+import CtaButton from "../components/Index/CtaButton.astro";
 const HeroSectionData = await getEntryBySlug("IndexPage", "hero");
 const {
   data: { sliderText },
@@ -25,5 +26,7 @@ const {
     <!-- <VideoClass /> -->
     <CtaSection />
     <TestimonialSection />
+    <PortfolioSlider sliderText={sliderText} />
+    <CtaButton />
   </main>
 </Layout>
