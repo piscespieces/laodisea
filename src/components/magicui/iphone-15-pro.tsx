@@ -69,15 +69,35 @@ export default function Iphone15Pro({
         />
       )}
       {videoSrc && (
-        <foreignObject x="21.25" y="19.25" width="389.5" height="843.5">
-          <video
-            className="size-full overflow-hidden rounded-[55.75px] object-cover"
-            src={videoSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+        <foreignObject 
+          x="21.25" 
+          y="19.25" 
+          width="389.5" 
+          height="843.5"
+          clipPath="url(#roundedCorners)"
+        >
+          <div 
+            style={{
+              width: '100%',
+              height: '100%',
+              overflow: 'hidden',
+              borderRadius: '55.75px',
+            }}
+          >
+            <video
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '55.75px',
+              }}
+              src={videoSrc}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
         </foreignObject>
       )}
       <defs>
