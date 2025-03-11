@@ -6,6 +6,7 @@ export function Phone({ videoSrc }) {
       <Iphone15Pro
         className="w-full h-auto"
         videoSrc={videoSrc}
+        noRoundedCorners={true}
       />
     </div>
   );
