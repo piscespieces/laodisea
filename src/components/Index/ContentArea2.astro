@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import { getEntryBySlug } from "astro:content";
+import { Phone } from "../functional/Phone";
 const ContentData = await getEntryBySlug("IndexPage", "content-2");
-const { header, image, points } = ContentData?.data;
+const { header, image, points, video } = ContentData?.data;
 const { Content } = await ContentData.render();
 ---
 
@@ -37,13 +38,7 @@ const { Content } = await ContentData.render();
   <div
     class='jos relative z-10 flex items-center justify-center lg:order-2'
     data-jos_animation='fade-right'>
-    <Image
-      src={image}
-      alt='content-img-2'
-      width='451'
-      height='456'
-      class='h-auto w-[50%] md:w-auto'
-    />
+    <Phone videoSrc={video} />
     <Image
       src='/assets/img/elements/home-3-content-img-shape-2.svg'
       alt='home-3-content-img-shape-2'

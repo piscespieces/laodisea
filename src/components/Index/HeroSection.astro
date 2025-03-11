@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Button from "../ui/Button.astro";
-
+import { Phone } from "../functional/Phone";
 const { HeroSectionData } = Astro.props;
 const {
   header,
@@ -13,6 +13,7 @@ const {
   happyCustomers,
   rating,
   button,
+  video
 } = HeroSectionData?.data;
 
 let imageLoaded = false; // Track if the image has loaded
@@ -123,15 +124,7 @@ let imageLoaded = false; // Track if the image has loaded
           <div class='jos'>
             <div
               class="relative z-10 mx-auto h-auto max-w-[280px] sm:max-w-[500px] lg:ml-auto lg:mr-0 opacity-0 animate-fade-in">
-              <Image
-                src={image}
-                alt='hero-mobile'
-                width='612'
-                height='1272'
-                class='z-10 mx-auto w-[306px]'
-                loading="eager"
-                decoding="async"
-              />
+              <Phone videoSrc={video} />
               <Image
                 src='/assets/img/elements/hero-3-shapes-1.svg'
                 alt='hero-2-shape-1'

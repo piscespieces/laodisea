@@ -2,11 +2,13 @@
 import { Image } from "astro:assets";
 import { getEntryBySlug } from "astro:content";
 import Button from "../ui/Button.astro";
+import { Phone } from "../functional/Phone";
 const ContentData = await getEntryBySlug("IndexPage", "content-1");
-const { header, image, button } = ContentData?.data;
+const { header, image, button, video } = ContentData?.data;
 const { Content } = await ContentData.render();
 ---
 
+{video}
 <div
   class='grid items-center gap-10 lg:grid-cols-[minmax(0,_0.7fr),_1fr] lg:gap-20 xl:grid-cols-[0.8fr_minmax(0,_1fr)] xl:gap-[209px]'>
   <div class='jos order-1 lg:order-2' data-jos_animation='fade-right'>
@@ -25,13 +27,7 @@ const { Content } = await ContentData.render();
   <div
     class='jos relative z-10 order-2 flex items-center justify-center lg:order-1'
     data-jos_animation='fade-left'>
-    <Image
-      src={image}
-      alt='content-img-1'
-      width='451'
-      height='456'
-      class='h-auto w-[50%] md:w-auto'
-    />
+    <Phone videoSrc={video} />
     <Image
       src='/assets/img/elements/home-3-content-img-shape-1.svg'
       alt='home-3-content-img-shape-1'

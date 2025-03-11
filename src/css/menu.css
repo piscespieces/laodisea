@@ -22,7 +22,7 @@
 .brand-logo,
 .default-logo,
 .responsive-logo {
-  @apply max-w-[128px] transition-all duration-[400ms] mr-9
+  @apply max-w-[128px] transition-all duration-300 mr-9
 }
 
 @media (min-width: 576px) {
