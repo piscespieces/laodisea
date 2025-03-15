@@ -19,6 +19,9 @@ const {
 let imageLoaded = false; // Track if the image has loaded
 ---
 
+{/* Add preload link for video */}
+<link rel="preload" href={video} as="video" type="video/mp4" fetchpriority="high" />
+
 <section class='section-hero'>
   <div class='relative z-10'>
     <div

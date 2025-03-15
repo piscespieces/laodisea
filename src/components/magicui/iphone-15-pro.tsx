@@ -85,6 +85,7 @@ export default function Iphone15Pro({
               loop
               muted
               playsInline
+              preload="auto"
             />
           </div>
         )}
